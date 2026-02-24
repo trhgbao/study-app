@@ -28,7 +28,7 @@ export default function RootLayout({
           async
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7985740889012264"
           crossOrigin="anonymous"
-          strategy="afterInteractive" // Chỉ tải script quảng cáo sau khi trang đã tương tác được
+          strategy="beforeInteractive" // Chỉ tải script quảng cáo sau khi trang đã tương tác được
         />
       </head>
       <body className={inter.className}>{children}</body>
