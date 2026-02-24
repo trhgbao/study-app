@@ -3,13 +3,13 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import Script from 'next/script'; // Bước 1: Import component Script của Next.js
+import Script from 'next/script'; // 1. IMPORT SCRIPT
 
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "StudyFocus App",
-  description: "Ứng dụng giúp bạn tập trung học tập và duy trì chuỗi thành tích.",
+  description: "Ứng dụng giúp bạn tập trung học tập",
 };
 
 export default function RootLayout({
@@ -18,23 +18,20 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="vi"> {/* Đổi sang tiếng Việt cho chuẩn */}
+    <html lang="vi">
       <head>
         {/*
-          Các thẻ Meta, Title... mặc định của Next.js
+          Đây là mã xác minh của AdSense. 
+          Google sẽ quét thấy nó trong thẻ <head> này.
         */}
-
-        {/* Bước 2: Dán mã AdSense của bạn vào đây */}
         <Script
           async
-          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7985740889012264" // Đây là mã của bạn
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7985740889012264"
           crossOrigin="anonymous"
-          strategy="afterInteractive" // Rất quan trọng: Tối ưu tốc độ tải trang
+          strategy="afterInteractive" // Chỉ tải script quảng cáo sau khi trang đã tương tác được
         />
       </head>
-      <body className={inter.className}>
-        {children}
-      </body>
+      <body className={inter.className}>{children}</body>
     </html>
   );
 }
